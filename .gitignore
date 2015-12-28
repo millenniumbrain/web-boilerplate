@@ -1,0 +1,29 @@
+# test database
+db/*.sqlite
+
+# sass output fils
+*.map
+
+# sass cache
+.sass-cache
+
+# bundler
+.bundle
+vendor
+bin
+
+# Gemfile lock
+*.lock
+.lock
+Gemfile.lock
+
+# remove images
+public/uploads/*.jpg
+public/uploads/*.jpeg
+public/uploads/*.png
+public/uploads/*.gif
+
+# js modules
+node_modules
+.yardoc/*
+doc/*

@@ -1,0 +1,55 @@
+require 'puma'
+require 'roda'
+require 'slim'
+require 'json'
+require 'bcrypt'
+require 'better_errors'
+require 'logger'
+require './models'
+
+class App < Roda
+  plugin :default_headers,
+    'Content-Type' => 'text/html',
+    'Content-Security-Policy' => "default-src 'self'",
+    'Strict-Transport-Security' => 'max-age=160704400',
+    'X-Frame-Options' => 'deny',
+    'X-Content-Type-Options' => 'nosniff',
+    'X-XSS-Protection' => '1; mode=block'
+  plugin :environments
+  plugin :multi_route
+  plugin :render, :engine => 'slim', :views => 'views'
+  plugin :static, ['/js', '/css']
+  plugin :flash
+  plugin :h
+  plugin :multi_route
+
+  self.environment = :development
+
+  configure do
+    use Rack::Session::Cookie, :secret => ENV['SECRET']
+    use Rack::Session::Pool, :expire_after => 252000
+  end
+
+  configure :development do
+    Slim::Engine.set_options :pretty => true, :sort_attrs => true
+    use Rack::MethodOverride
+    use BetterErrors::Middleware
+    BetterErrors.application_root = __dir__
+  end
+
+  configure :production do
+    Slim::Engine.set_options :pretty => true, :sort_attrs => false
+  end
+
+  Dir['./route/*.rb'].each { |f| require f }
+  Dir['./helpers/*.rb'].each { |f| require f }
+  Dir['./lib/*.rb'].each { |f| require f }
+
+  route do |r|
+    r.multi_route
+
+    r.root do
+      view 'index'
+    end
+  end
+end
