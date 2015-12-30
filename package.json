@@ -1,0 +1,33 @@
+{
+  "name": "crash-nebula-boilerplate",
+  "version": "0.0.3",
+  "description": "Boilerplate for ruby roda projects",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "coffeeify": "^2.0.1",
+    "gulp": "^3.9.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/millenniumbrain/crash-nebula-boilerplate.git"
+  },
+  "keywords": [
+    "ruby",
+    "coffee-script"
+  ],
+  "author": "Millennium Brain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/millenniumbrain/crash-nebula-boilerplate/issues"
+  },
+  "homepage": "https://github.com/millenniumbrain/crash-nebula-boilerplate#readme"
+}
