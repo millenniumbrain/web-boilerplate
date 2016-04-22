@@ -5,19 +5,20 @@ require 'json'
 require 'bcrypt'
 require 'better_errors'
 require 'logger'
+require 'tilt/erubis'
 require './models'
 
 class App < Roda
   plugin :default_headers,
     'Content-Type' => 'text/html',
-    'Content-Security-Policy' => "default-src 'self'",
+    #'Content-Security-Policy' => "default-src 'self'",
     'Strict-Transport-Security' => 'max-age=160704400',
     'X-Frame-Options' => 'deny',
     'X-Content-Type-Options' => 'nosniff',
     'X-XSS-Protection' => '1; mode=block'
   plugin :environments
   plugin :multi_route
-  plugin :render, :engine => 'slim', :views => 'views'
+  plugin :render, :engine => 'erubis', :views => 'views'
   plugin :static, ['/js', '/css']
   plugin :flash
   plugin :h
@@ -31,7 +32,6 @@ class App < Roda
   end
 
   configure :development do
-    Slim::Engine.set_options :pretty => true, :sort_attrs => true
     use Rack::MethodOverride
     use BetterErrors::Middleware
     BetterErrors.application_root = __dir__

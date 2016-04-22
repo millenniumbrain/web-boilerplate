@@ -3,10 +3,10 @@
 ##Uses
  - Sequel
  - Roda
- - Slim
+ - erubis
  - Sass
  - Gulp
- - Vue js
+ - Typescript
  - jQuery
 
 
