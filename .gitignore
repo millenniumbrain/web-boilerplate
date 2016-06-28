@@ -1,13 +1,16 @@
-# test database
+# sqlite database
 db/*.sqlite
 
-# sass output fils
+# sass output files
 *.map
+public/css/dashboard.css
+public/css/users.css
+public/css/style.css
 
 # sass cache
 .sass-cache
 
-# bundler
+# bundler files
 .bundle
 vendor
 bin
@@ -17,13 +20,17 @@ bin
 .lock
 Gemfile.lock
 
-# remove images
-public/uploads/*.jpg
-public/uploads/*.jpeg
-public/uploads/*.png
-public/uploads/*.gif
+# remove log files
+logs/*
 
 # js modules
 node_modules
 .yardoc/*
-doc/*
+docs
+public/.yardoc/*
+public/js/dist/*
+# environment variables
+env.rb
+
+# ngrok
+ngrok
