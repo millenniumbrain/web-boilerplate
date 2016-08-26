@@ -6,7 +6,6 @@
   "dependencies": {},
   "devDependencies": {
     "browserify": "^13.0.0",
-    "docco": "^0.7.0",
     "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",

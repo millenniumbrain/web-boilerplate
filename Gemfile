@@ -7,7 +7,7 @@ gem 'rake', '~> 10.4.2'
 gem 'rack_csrf', '~> 2.5.0'
 gem 'roda', '~> 2.9.0'
 gem 'sequel', '~> 4.29.0'
-gem 'slim', '~> 3.0.6'
+gem 'erubis', '~> 3.0.6'
 
 group :production do
   gem 'pg', '~> 0.18.4'
@@ -24,7 +24,6 @@ group :testing, :development do
   gem 'rack-test', '~> 0.6.3', :require => 'rack/test'
   gem 'rspec', '~> 3.4.0'
   gem 'sass', '~> 3.4.20'
-  gem 'shotgun', '~> 0.9.1'
   gem 'sqlite3', '~> 1.3.11'
 end
 

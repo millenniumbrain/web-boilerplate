@@ -1,6 +1,5 @@
 require 'puma'
 require 'roda'
-require 'slim'
 require 'json'
 require 'bcrypt'
 require 'better_errors'
@@ -38,7 +37,6 @@ class App < Roda
   end
 
   configure :production do
-    Slim::Engine.set_options :pretty => true, :sort_attrs => false
   end
 
   Dir['./route/*.rb'].each { |f| require f }

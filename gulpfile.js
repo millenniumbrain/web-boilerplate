@@ -9,11 +9,11 @@ var tsify       = require ('tsify');
 
 gulp.task("watch", function() {
   var b = browserify({ debug: true, cache: {}, packageCache: {} });
-  
+
   b.add('public/ts/main.ts');
-  b.plugin(tsify, { noImplicitAny: true })
+  b.plugin(tsify)
   b.plugin(watchify);
-  
+
   b.on('update', bundle);
   bundle();
 
@@ -23,7 +23,7 @@ gulp.task("watch", function() {
       .pipe(source('app.js'))
       .pipe(buffer())
       .pipe(sourcemaps.init({loadMaps: true,debug: true}))
-      //.pipe(uglify())
+     // .pipe(uglify())
       .pipe(sourcemaps.write("./"))
       .pipe(gulp.dest('public/js/dist'));
   }
