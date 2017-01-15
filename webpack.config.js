@@ -1,5 +1,7 @@
+var path  = require("path")
 module.exports = {
-    entry: "./ts/main.ts",
+    context: __dirname + "ts",
+    entry: "./*",
     output: {
         filename: "public/js/bundle.js"
     },
@@ -11,6 +13,9 @@ module.exports = {
         loaders: [
             // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
             { test: /\.tsx?$/, loader: "ts-loader" }
+        ],
+        include: [
+            path.resolve(__dirname,  "ts")
         ]
     }
 }
