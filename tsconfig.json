@@ -13,9 +13,7 @@
     "removeComments": true,
     "noLib": false,
     "preserveConstEnums": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "strictNullChecks": false,
-    "outFile": "./public/js/dist/app.js"
+    "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
     "node_modules",
@@ -26,8 +24,5 @@
   "buildOnSave": false,
   "atom": {
     "rewriteTsconfig": false
-  },
-  "files": [
-    "public/ts/main.ts"
-  ]
+  }
 }
