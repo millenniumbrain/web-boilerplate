@@ -1,32 +1,32 @@
 source 'https://rubygems.org'
 
-gem 'bcrypt', '~> 3.1.10'
-gem 'json', '~> 1.8.3'
-gem 'puma', '~> 2.15.3'
-gem 'rake', '~> 10.4.2'
-gem 'rack_csrf', '~> 2.5.0'
-gem 'roda', '~> 2.9.0'
-gem 'sequel', '~> 4.29.0'
-gem 'erubis', '~> 3.0.6'
+gem 'bcrypt'
+gem 'json'
+gem 'puma'
+gem 'rake'
+gem 'rack_csrf'
+gem 'roda'
+gem 'sequel'
+gem 'erubis'
 
 group :production do
-  gem 'pg', '~> 0.18.4'
+  gem 'pg'
 end
 
 group :documentation do
-  gem 'yard', '~> 0.8.7.6', :require => false
+  gem 'yard', :require => false
 end
 
 group :testing, :development do
-  gem 'better_errors', '~> 2.1.1'
-  gem 'binding_of_caller', '~> 0.7.2'
-  gem 'capybara', '~> 2.5.0'
-  gem 'rack-test', '~> 0.6.3', :require => 'rack/test'
-  gem 'rspec', '~> 3.4.0'
-  gem 'sass', '~> 3.4.20'
-  gem 'sqlite3', '~> 1.3.11'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'capybara'
+  gem 'rack-test' :require => 'rack/test'
+  gem 'rspec'
+  gem 'sass'
+  gem 'sqlite3'
 end
 
 group :testing do
-  gem 'coderay', '~> 1.1.0'
+  gem 'coderay'
 end
