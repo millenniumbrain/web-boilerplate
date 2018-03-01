@@ -1,21 +1,23 @@
-var path  = require("path")
+var webpack = require("webpack");
 module.exports = {
-    context: __dirname + "ts",
-    entry: "./*",
-    output: {
-        filename: "public/js/bundle.js"
-    },
-    resolve: {
-        // Add '.ts' and '.tsx' as a resolvable extension.
-        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
-    },
-    module: {
-        loaders: [
-            // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
-            { test: /\.tsx?$/, loader: "ts-loader" }
-        ],
-        include: [
-            path.resolve(__dirname,  "ts")
-        ]
-    }
-}
+  entry: {
+    bundle: './ts/app.ts',
+  },
+  devtool: 'inline-source-maps',
+  output: {
+    filename: 'public/js/[name].js',
+    path: __dirname
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
+      },
+    ]
+  },
+  resolve: {
+    modules: ["node_modules"],
+    extensions: [".tsx", ".ts", ".js"]
+  },
+};
