@@ -2,10 +2,6 @@
   "name": "crash-nebula-boilerplate",
   "version": "0.0.3",
   "description": "Boilerplate for ruby roda projects",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "webpack": "^1.14.0"
-  },
   "devDependencies": {
     "jquery": "^3.2.1",
     "ts-loader": "^2.0.3",
@@ -13,7 +9,7 @@
     "typescript": "^2.2.2",
     "webpack": "^2.3.3",
     "webpack-dev-server": "2",
-    "uglify-js": "3.3.5
+    "uglify-js": "3.3.5"
   },
   "repository": {
     "type": "git",
