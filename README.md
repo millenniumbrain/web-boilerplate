@@ -2,7 +2,7 @@
 
 For the quick creation of web projects.
 
-##Uses
+## Uses
  - Sequel
  - Roda
  - erubis
