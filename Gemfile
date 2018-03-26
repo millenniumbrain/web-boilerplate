@@ -8,6 +8,7 @@ gem 'rack_csrf'
 gem 'roda'
 gem 'sequel'
 gem 'erubis'
+gem 'tilt'
 
 group :production do
   gem 'pg'
