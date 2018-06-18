@@ -52,6 +52,7 @@ RSpec.configure do |config|
   end
 
   config.around(:each) do |example|
+    pp DB
     DB.transaction(:rollback => :always, :auto_savepoint => true) { example.run }
   end
 

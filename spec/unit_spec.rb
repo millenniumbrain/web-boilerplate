@@ -1,9 +1,11 @@
 require 'rspec/core'
 require 'rspec/expectations'
+require 'spec_helper'
 
 describe Example do
   before(:each) do
     @example = Example.create(:name => 'Moose')
+    puts @example
   end
 
   it 'associations should be correct' do
