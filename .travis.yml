@@ -1,18 +1,20 @@
 langauge: ruby
 sudo: enabled
 before_install:
-  sudo add-apt-repository ppa:chris-lea/libsodium -y;
-  sudo echo "deb http://ppa.launchpad.net/chris-lea/libsodium/ubuntu trusty main" >> /etc/apt/sources.list;
-  sudo echo "deb-src http://ppa.launchpad.net/chris-lea/libsodium/ubuntu trusty main" >> /etc/apt/sources.list;
-  sudo apt-get update && sudo apt-get install libsodium-dev;
+  - sudo add-apt-repository ppa:chris-lea/libsodium -y
+  - sudo echo "deb http://ppa.launchpad.net/chris-lea/libsodium/ubuntu trusty main" >> /etc/apt/sources.list
+  - sudo echo "deb-src http://ppa.launchpad.net/chris-lea/libsodium/ubuntu trusty main" >> /etc/apt/sources.list
+  - sudo apt-get update && sudo apt-get install libsodium-dev
+before_install:
+  - gem install bundler
 install:
-  bundle install --path vendor
-brefore_script:
-  bundle --binstubs
-  bin/rake sqlite:migrate
+  - bundle install --path vendor
+before_script:
+  - bundle --binstubs
+  - bin/rake sqlite:migrate
 script: 
-  bin/rspec --format doc
+  - bin/rspec --format doc
 after_script:
-  bin/rake sqlite:delete
+  - bin/rake sqlite:delete
 rvm:
   - 2.4.1
