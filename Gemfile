@@ -22,7 +22,7 @@ group :testing, :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capybara'
-  gem 'rack-test' :require => 'rack/test'
+  gem 'rack-test', :require => 'rack/test'
   gem 'rspec'
   gem 'sass'
   gem 'sqlite3'
