@@ -28,9 +28,10 @@ node_modules
 .yardoc/*
 docs
 public/.yardoc/*
-public/js/dist/*
+public/js/*
+
 # environment variables
-env.rb
+.env.rb
 
 # ngrok
 ngrok
