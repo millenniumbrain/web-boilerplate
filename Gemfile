@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'bcrypt'
 gem 'json'
 gem 'puma'
 gem 'rake'
@@ -9,6 +8,11 @@ gem 'roda'
 gem 'sequel'
 gem 'erubis'
 gem 'tilt'
+gem 'rbnacl'
+gem 'nokogiri'
+gem 'activesupport'
+gem 'jwt'
+gem 'sucker_punch'
 
 group :production do
   gem 'pg'
