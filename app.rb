@@ -1,7 +1,6 @@
 require 'puma'
 require 'roda'
 require 'json'
-require 'bcrypt'
 require 'better_errors'
 require 'logger'
 require 'tilt/erubis'
