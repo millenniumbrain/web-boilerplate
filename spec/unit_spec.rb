@@ -2,17 +2,20 @@ require 'rspec/core'
 require 'rspec/expectations'
 require 'spec_helper'
 
-describe Example do
+describe User do
   before(:each) do
-    @example = Example.create(:name => 'Moose')
-    puts @example
+    @user = User.create(:name => 'Moose')
+    puts @user
   end
 
+=begin
   it 'associations should be correct' do
     expect(@example.example_associations).to eq []
   end
+=end
 end
 
+=begin
 describe ExampleAssociation do
 
   before(:each) do
@@ -24,3 +27,4 @@ describe ExampleAssociation do
     expect(@example_associations.example.class).to eq Example 
   end
 end
+=end

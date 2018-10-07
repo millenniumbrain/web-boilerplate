@@ -3,13 +3,24 @@ require 'roda'
 require 'json'
 require 'better_errors'
 require 'logger'
+require 'rbnacl'
+require 'securerandom'
+require 'base64'
+require 'active_support'
+require 'active_support/core_ext/date_time'
+require 'active_support/core_ext/date'
+require 'active_support/core_ext/time'
+require 'active_support/core_ext/numeric'
+require 'nokogiri'
+require 'jwt'
 require 'tilt/erubis'
 require './models'
+require './env.rb'
 
 class App < Roda
   plugin :default_headers,
     'Content-Type' => 'text/html',
-    #'Content-Security-Policy' => "default-src 'self'",
+    'Content-Security-Policy' => "default-src 'self' #{ENV['BASE_URL']} *.cloudflare.com *.fontawesome.com *.googleapis.com *.gstatic.com unpkg.com; style-src 'unsafe-inline' *.fontawesome.com *.googleapis.com *.gstatic.com unpkg.com #{ENV['BASE_URL']}; img-src *",
     'Strict-Transport-Security' => 'max-age=160704400',
     'X-Frame-Options' => 'deny',
     'X-Content-Type-Options' => 'nosniff',
@@ -19,8 +30,12 @@ class App < Roda
   plugin :render, :engine => 'erubis', :views => 'views'
   plugin :static, ['/js', '/css']
   plugin :flash
+  plugin :all_verbs
   plugin :h
   plugin :multi_route
+  plugin :not_found do
+    Nokogiri::HTML(File.open("public/404.html")).to_s
+  end
 
   self.environment = :development
 
