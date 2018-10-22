@@ -12,7 +12,6 @@ gem 'rbnacl'
 gem 'nokogiri'
 gem 'activesupport'
 gem 'jwt'
-gem 'sucker_punch'
 
 group :production do
   gem 'pg'
@@ -23,9 +22,7 @@ group :documentation do
 end
 
 group :testing, :development do
-  gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'capybara'
   gem 'rack-test', :require => 'rack/test'
   gem 'rspec'
   gem 'sass'
